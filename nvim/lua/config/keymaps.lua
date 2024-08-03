@@ -14,9 +14,13 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("n", "<leader>gd",
-  function()
-    Util.float_term({ "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
-      { cwd = Util.get_root(), esc_esc = false })
-  end,
-  { desc = "LazyDocker (root dir)" })
+map("n", "<leader>gd", function()
+  Util.float_term(
+    { "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
+    { cwd = Util.get_root(), esc_esc = false }
+  )
+end, { desc = "LazyDocker (root dir)" })
+
+map("n", "<leader>pd", ":Telescope neovim-project discover<CR>", { desc = "Open Project List. Based on patterns" })
+map("n", "<leader>ph", ":Telescope neovim-project history<CR>", { desc = "Open Project History" })
+map("n", "<leader>ps", ":NeovimProjectLoadHist<CR>", { desc = "Open the previous session" })
