@@ -2,8 +2,11 @@ return {
   "coffebar/neovim-project",
   opts = {
     projects = { -- define project roots
-      "~/Projects/bear/*/source/*",
       "~/.config/*",
+      "~/Projects/bear/*/source/*",
+      "~/Projects/research/*",
+      "~/Projects/ragnarok/*",
+      "~/Projects/ragnarok/tools/*",
     },
     last_session_on_startup = false,
   },
