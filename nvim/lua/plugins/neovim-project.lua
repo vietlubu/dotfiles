@@ -19,6 +19,6 @@ return {
     { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
     { "Shatur/neovim-session-manager" },
   },
-  lazy = false,
+  lazy = true,
   priority = 100,
 }
