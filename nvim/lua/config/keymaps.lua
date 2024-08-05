@@ -24,3 +24,8 @@ end, { desc = "LazyDocker (root dir)" })
 map("n", "<leader>pd", ":Telescope neovim-project discover<CR>", { desc = "Open Project List. Based on patterns" })
 map("n", "<leader>ph", ":Telescope neovim-project history<CR>", { desc = "Open Project History" })
 map("n", "<leader>ps", ":NeovimProjectLoadHist<CR>", { desc = "Open the previous session" })
+
+map("n", "<C-S-h>", ":vertical resize -10<CR>", { desc = "Resize window left" })
+map("n", "<C-S-l>", ":vertical resize +10<CR>", { desc = "Resize window right" })
+map("n", "<C-S-k>", ":resize -10<CR>", { desc = "Resize window up" })
+map("n", "<C-S-j>", ":resize +10<CR>", { desc = "Resize window down" })
