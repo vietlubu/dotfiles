@@ -1,0 +1,372 @@
+;; this is a little bit weird, but it's convenient
+;; the rule [:!Ca :!T1]
+;; means from command a to control 1
+;; :!Ca is keycode :a and prefix a with !C
+
+;; here's the definition
+
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
+;; examples
+
+;; !CTSequal_sign  | mandatory command control shift =
+;;                 | which is command control +
+;; !O#Sright_arrow | mandatory option optional any right_arrow
+
+;; karabiner definition of mandatory and optional
+;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+
+;; rule [<from> <to>]
+;; if simplified modifier is used in <to>, optional(#) definition will be
+;; ignored.
+
+{
+	:devices {
+		:macbook-keyboard [{:vendor_id 1452 :product_id 834}]
+		:anne-pro2 [{:vendor_id 1241 :product_id 41618}]
+		:anne-pro2-bt [{:vendor_id 13 :product_id 0}]
+		:dareu [{:vendor_id 9610 :product_id 42}]
+	}
+	:templates
+	{
+		:mynoti "/opt/homebrew/bin/terminal-notifier -message \"%s\" -title Karabiner -group Karabiner ; sleep 1; /opt/homebrew/bin/terminal-notifier -remove Karabiner"
+	}
+	:main, [
+		{:des "Rotate between qwerty and dvorak"
+	        :rules [
+	            [:!CTOreturn_or_enter [["dvorak" 1]["layer" 1][:mynoti "Enable dvorak"]]["layer" 0] [:anne-pro2 :anne-pro2-bt]]
+	            [:!CTOreturn_or_enter [["dvorak" 0]["layer" 0][:mynoti "Disable dvorak"]]["layer" 1] [:anne-pro2 :anne-pro2-bt]]
+	            
+	            ; clean layer mode
+	            [:!CTORreturn_or_enter [["dvorak" 0]["layer" 0][:mynoti "Clear layers"]] [:anne-pro2 :anne-pro2-bt]]
+	            [:!CTOk [[:noti :layers ""]] [:anne-pro2 :anne-pro2-bt]]
+	        ]
+        }
+	
+		{:des "Swap caps lock to backspace" :rules [
+			[:##caps_lock :delete_or_backspace [:macbook-keyboard :dareu]]
+			[:##delete_or_backspace :caps_lock [:macbook-keyboard :dareu]]
+		]}
+		{:des "Anne pro 2 support" :rules [
+			; START modify move arrows
+			[:!Cright_shift :!Cup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Tright_shift :!Tup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Sright_shift :!Sup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Oright_shift :!Oup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!OSright_shift :!OSup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!CSright_shift :!CSup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!COright_shift :!COup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TSright_shift :!TSup_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TOright_shift :!TOup_arrow [:anne-pro2 :anne-pro2-bt]]
+
+			[:!Cf21 :!Cright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Tf21 :!Tright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Sf21 :!Sright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Of21 :!Oright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!OSf21 :!OSright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!CSf21 :!CSright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!COf21 :!COright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TSf21 :!TSright_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TOf21 :!TSright_arrow [:anne-pro2 :anne-pro2-bt]]
+
+			[:!Cf22 :!Cdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Tf22 :!Tdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Sf22 :!Sdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Of22 :!Odown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!OSf22 :!OSdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!CSf22 :!CSdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!COf22 :!COdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TSf22 :!TSdown_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TOf22 :!TSdown_arrow [:anne-pro2 :anne-pro2-bt]]
+
+			[:!Cf23 :!Cleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Tf23 :!Tleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Sf23 :!Sleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!Of23 :!Oleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!OSf23 :!OSleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!CSf23 :!CSleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!COf23 :!COleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TSf23 :!TSleft_arrow [:anne-pro2 :anne-pro2-bt]]
+			[:!TOf23 :!TSleft_arrow [:anne-pro2 :anne-pro2-bt]]
+
+			; END modify move arrows
+
+			; f24 to commands + options + control
+			[:f24 :!CTleft_option [:anne-pro2 :anne-pro2-bt]]
+
+			; coding symbols
+			; [:!CTOescape :!S4 :anne-pro2]
+			; [:!CTORescape :!Sgrave_accent_and_tilde :anne-pro2]
+			; [:!CTORescape :grave_accent_and_tilde :anne-pro2]
+		]}
+		{:des "Remap layout to Programmer Dvorak on Anne Pro 2" :rules [ [:condi ["dvorak" 1]]
+			;; numbers row
+			[:!Sgrave_accent_and_tilde [:!Sgrave_accent_and_tilde :vk_none] [:anne-pro2 :anne-pro2] {:held :!Sgrave_accent_and_tilde}]
+			[:##grave_accent_and_tilde :!S4 [:anne-pro2 :anne-pro2]]
+			[:!S1 :!S5 [:anne-pro2 :anne-pro2]]
+			[:##1 :!S7 [:anne-pro2 :anne-pro2]]
+			[:!S2 :7 [:anne-pro2 :anne-pro2]]
+			[:##2 [:open_bracket :vk_none] [:anne-pro2 :anne-pro2] {:held :open_bracket}]
+			[:!S3 :5 [:anne-pro2 :anne-pro2]]
+			[:##3 [:!Sopen_bracket :vk_none] [:anne-pro2 :anne-pro2] {:held :!Sopen_bracket}]
+			[:!S4 :3 [:anne-pro2 :anne-pro2]]
+			[:##4 [:!Sclose_bracket :vk_none] [:anne-pro2 :anne-pro2] {:held :!Sclose_bracket}]
+			[:!S5 :1 [:anne-pro2 :anne-pro2]]
+			[:##5 :!S9 [:anne-pro2 :anne-pro2]]
+			[:!S6 :9 [:anne-pro2 :anne-pro2]]
+			[:##6 [:equal_sign :vk_none] [:anne-pro2 :anne-pro2] {:held :equal_sign}]
+			[:!S7, :0 [:anne-pro2 :anne-pro2]]
+			[:##7 :!S8 [:anne-pro2 :anne-pro2]]
+			[:!S8, :2 [:anne-pro2 :anne-pro2]]
+			[:##8 :!S0 [:anne-pro2 :anne-pro2]]
+			[:!S9 :4 [:anne-pro2 :anne-pro2]]
+			[:##9 [:!Sequal_sign :vk_none] [:anne-pro2 :anne-pro2] {:held :equal_sign}]
+			[:!S0 :6 [:anne-pro2 :anne-pro2]]
+			[:##0 [:close_bracket :vk_none] [:anne-pro2 :anne-pro2] {:held :close_bracket}]
+			[:!Shyphen :8 [:anne-pro2 :anne-pro2]]
+			[:##hyphen :!S1 [:anne-pro2 :anne-pro2]]
+			[:!Sequal_sign :!S3 [:anne-pro2 :anne-pro2]]
+			[:##equal_sign :grave_accent_and_tilde [:anne-pro2 :anne-pro2]]
+
+			;; top row
+			[:##q :quote [:anne-pro2 :anne-pro2]]
+			[:##w :comma [:anne-pro2 :anne-pro2]]
+			[:##e :period [:anne-pro2 :anne-pro2]]
+			[:##r :p [:anne-pro2 :anne-pro2]]
+			[:##t :y [:anne-pro2 :anne-pro2]]
+			[:##y :f [:anne-pro2 :anne-pro2]]
+			[:##u :g [:anne-pro2 :anne-pro2]]
+			[:##i :c [:anne-pro2 :anne-pro2]]
+			[:##o :r [:anne-pro2 :anne-pro2]]
+			[:##p :l [:anne-pro2 :anne-pro2]]
+			[:##open_bracket :slash [:anne-pro2 :anne-pro2]]
+			[:!Sclose_bracket :!S6 [:anne-pro2 :anne-pro2]]
+			[:##close_bracket :!S2 [:anne-pro2 :anne-pro2]]
+
+			;; home row
+			[:##a :a [:anne-pro2 :anne-pro2]]
+			[:##s :o [:anne-pro2 :anne-pro2]]
+			[:##d :e [:anne-pro2 :anne-pro2]]
+			[:##f :u [:anne-pro2 :anne-pro2]]
+			[:##g :i [:anne-pro2 :anne-pro2]]
+			[:##h :d [:anne-pro2 :anne-pro2]]
+			[:##j :h [:anne-pro2 :anne-pro2]]
+			[:##k :t [:anne-pro2 :anne-pro2]]
+			[:##l :n [:anne-pro2 :anne-pro2]]
+			[:##semicolon :s [:anne-pro2 :anne-pro2]]
+			[:##quote :hyphen [:anne-pro2 :anne-pro2]]
+
+			;; bottom row
+			[:##z :semicolon [:anne-pro2 :anne-pro2]]
+			[:##x :q [:anne-pro2 :anne-pro2]]
+			[:##v :k [:anne-pro2 :anne-pro2]]
+			[:##c :j [:anne-pro2 :anne-pro2]]
+			[:##b :x [:anne-pro2 :anne-pro2]]
+			[:##n :b [:anne-pro2 :anne-pro2]]
+			[:##m :m [:anne-pro2 :anne-pro2]]
+			[:##comma :w [:anne-pro2 :anne-pro2]]
+			[:##period :v [:anne-pro2 :anne-pro2]]
+			[:##slash :z [:anne-pro2 :anne-pro2]]
+		]}
+
+		{:des "Remap layout to Programmer Dvorak on MacBook Keyboard" :rules [ [:condi ["dvorak" 1]]
+			;; numbers row
+			[:!Sgrave_accent_and_tilde [:!Sgrave_accent_and_tilde :vk_none] :macbook-keyboard {:held :!Sgrave_accent_and_tilde}]
+			[:##grave_accent_and_tilde :!S4 :macbook-keyboard]
+			[:!S1 :!S5 :macbook-keyboard]
+			[:##1 :!S7 :macbook-keyboard]
+			[:!S2 :7 :macbook-keyboard]
+			[:##2 [:open_bracket :vk_none] :macbook-keyboard {:held :open_bracket}]
+			[:!S3 :5 :macbook-keyboard]
+			[:##3 [:!Sopen_bracket :vk_none] :macbook-keyboard {:held :!Sopen_bracket}]
+			[:!S4 :3 :macbook-keyboard]
+			[:##4 [:!Sclose_bracket :vk_none] :macbook-keyboard {:held :!Sclose_bracket}]
+			[:!S5 :1 :macbook-keyboard]
+			[:##5 :!S9 :macbook-keyboard]
+			[:!S6 :9 :macbook-keyboard]
+			[:##6 [:equal_sign :vk_none] :macbook-keyboard {:held :equal_sign}]
+			[:!S7, :0 :macbook-keyboard]
+			[:##7 :!S8 :macbook-keyboard]
+			[:!S8, :2 :macbook-keyboard]
+			[:##8 :!S0 :macbook-keyboard]
+			[:!S9 :4 :macbook-keyboard]
+			[:##9 [:!Sequal_sign :vk_none] :macbook-keyboard {:held :equal_sign}]
+			[:!S0 :6 :macbook-keyboard]
+			[:##0 [:close_bracket :vk_none] :macbook-keyboard {:held :close_bracket}]
+			[:!Shyphen :8 :macbook-keyboard]
+			[:##hyphen :!S1 :macbook-keyboard]
+			[:!Sequal_sign :!S3 :macbook-keyboard]
+			[:##equal_sign :grave_accent_and_tilde :macbook-keyboard]
+
+			;; top row
+			[:##q :quote :macbook-keyboard]
+			[:##w :comma :macbook-keyboard]
+			[:##e :period :macbook-keyboard]
+			[:##r :p :macbook-keyboard]
+			[:##t :y :macbook-keyboard]
+			[:##y :f :macbook-keyboard]
+			[:##u :g :macbook-keyboard]
+			[:##i :c :macbook-keyboard]
+			[:##o :r :macbook-keyboard]
+			[:##p :l :macbook-keyboard]
+			[:##open_bracket :slash :macbook-keyboard]
+			[:!Sclose_bracket :!S6 :macbook-keyboard]
+			[:##close_bracket :!S2 :macbook-keyboard]
+
+			;; home row
+			[:##a :a :macbook-keyboard]
+			[:##s :o :macbook-keyboard]
+			[:##d :e :macbook-keyboard]
+			[:##f :u :macbook-keyboard]
+			[:##g :i :macbook-keyboard]
+			[:##h :d :macbook-keyboard]
+			[:##j :h :macbook-keyboard]
+			[:##k :t :macbook-keyboard]
+			[:##l :n :macbook-keyboard]
+			[:##semicolon :s :macbook-keyboard]
+			[:##quote :hyphen :macbook-keyboard]
+
+			;; bottom row
+			[:##z :semicolon :macbook-keyboard]
+			[:##x :q :macbook-keyboard]
+			[:##v :k :macbook-keyboard]
+			[:##c :j :macbook-keyboard]
+			[:##b :x :macbook-keyboard]
+			[:##n :b :macbook-keyboard]
+			[:##m :m :macbook-keyboard]
+			[:##comma :w :macbook-keyboard]
+			[:##period :v :macbook-keyboard]
+			[:##slash :z :macbook-keyboard]
+		]}
+
+		{:des "Remap layout to Programmer Dvorak on Dareu Keyboard" :rules [ [:condi ["dvorak" 1]]
+			;; numbers row
+			[:!Sgrave_accent_and_tilde [:!Sgrave_accent_and_tilde :vk_none] :dareu {:held :!Sgrave_accent_and_tilde}]
+			[:##grave_accent_and_tilde :!S4 :dareu]
+			[:!S1 :!S5 :dareu]
+			[:##1 :!S7 :dareu]
+			[:!S2 :7 :dareu]
+			[:##2 [:open_bracket :vk_none] :dareu {:held :open_bracket}]
+			[:!S3 :5 :dareu]
+			[:##3 [:!Sopen_bracket :vk_none] :dareu {:held :!Sopen_bracket}]
+			[:!S4 :3 :dareu]
+			[:##4 [:!Sclose_bracket :vk_none] :dareu {:held :!Sclose_bracket}]
+			[:!S5 :1 :dareu]
+			[:##5 :!S9 :dareu]
+			[:!S6 :9 :dareu]
+			[:##6 [:equal_sign :vk_none] :dareu {:held :equal_sign}]
+			[:!S7, :0 :dareu]
+			[:##7 :!S8 :dareu]
+			[:!S8, :2 :dareu]
+			[:##8 :!S0 :dareu]
+			[:!S9 :4 :dareu]
+			[:##9 [:!Sequal_sign :vk_none] :dareu {:held :equal_sign}]
+			[:!S0 :6 :dareu]
+			[:##0 [:close_bracket :vk_none] :dareu {:held :close_bracket}]
+			[:!Shyphen :8 :dareu]
+			[:##hyphen :!S1 :dareu]
+			[:!Sequal_sign :!S3 :dareu]
+			[:##equal_sign :grave_accent_and_tilde :dareu]
+
+			;; top row
+			[:##q :quote :dareu]
+			[:##w :comma :dareu]
+			[:##e :period :dareu]
+			[:##r :p :dareu]
+			[:##t :y :dareu]
+			[:##y :f :dareu]
+			[:##u :g :dareu]
+			[:##i :c :dareu]
+			[:##o :r :dareu]
+			[:##p :l :dareu]
+			[:##open_bracket :slash :dareu]
+			[:!Sclose_bracket :!S6 :dareu]
+			[:##close_bracket :!S2 :dareu]
+
+			;; home row
+			[:##a :a :dareu]
+			[:##s :o :dareu]
+			[:##d :e :dareu]
+			[:##f :u :dareu]
+			[:##g :i :dareu]
+			[:##h :d :dareu]
+			[:##j :h :dareu]
+			[:##k :t :dareu]
+			[:##l :n :dareu]
+			[:##semicolon :s :dareu]
+			[:##quote :hyphen :dareu]
+
+			;; bottom row
+			[:##z :semicolon :dareu]
+			[:##x :q :dareu]
+			[:##v :k :dareu]
+			[:##c :j :dareu]
+			[:##b :x :dareu]
+			[:##n :b :dareu]
+			[:##m :m :dareu]
+			[:##comma :w :dareu]
+			[:##period :v :dareu]
+			[:##slash :z :dareu]
+		]}
+
+		{:des "Remap dareu Keyboard" :rules [
+			[:right_option :!CTleft_option [:dareu]]
+		]}
+
+	]
+}
+;
+;; {:des "command a to control 1" :rules [[:!Ca :!T1]]}
+;; this is a little bit weird, but it's convenient
+;; the rule [:!Ca :!T1]
+;; means from command a to control 1
+;; :!Ca is keycode :a and prefix a with !C
+
+;; here's the definition
+
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
+;; examples
+
+;; !CTSequal_sign  | mandatory command control shift =
+;;                 | which is command control +
+;; !O#Sright_arrow | mandatory option optional any right_arrow
+
+;; karabiner definition of mandatory and optional
+;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+
+;; rule [<from> <to>]
+;; if simplified modifier is used in <to>, optional(#) definition will be
+;; ignored.
+
+
+
+
+
+

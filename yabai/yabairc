@@ -33,9 +33,22 @@ yabai -m config mouse_action2 resize
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m mouse_drop_action swap
 
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
+apps_to_ignore="(System Settings|Calculator|Karabiner-Elements|licecap|Preview|Calendar)"
+yabai -m rule --add app="Godot$" manage=off
+# yabai -m rule --add app="^Calculator$" manage=off
+# yabai -m rule --add app="^Karabiner-Elements$" manage=off
+# yabai -m rule --add app="^licecap$" manage=off
+
+# Make the below apps transparent
+yabai -m config window_opacity off
+apps_transparent="(Cursor|Sublime Text)"
+# yabai -m signal --add event=window_focused app="^${apps_transparent}$" action="yabai -m config active_window_opacity 0.8"
+# yabai -m signal --add event=window_focused app="^${apps_transparent}$" action="yabai -m config normal_window_opacity 0.8"
+
+# When any other app gains focus, reset both active and background window opacity to fully visible
+# yabai -m signal --add event=window_focused app!="^${apps_transparent}$" action="yabai -m config active_window_opacity 1.0"
+# yabai -m signal --add event=window_focused app!="^${apps_transparent}$" action="yabai -m config normal_window_opacity 1.0"
+
 
 # Active windown border
 borders active_color=0xff7ed6df inactive_color=0xff494d64 width=3.0 &

@@ -1,655 +1,5330 @@
 {
-    "global": {
-        "ask_for_confirmation_before_quitting": true,
-        "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false,
-        "unsafe_ui": false
-    },
-    "profiles": [
-        {
-            "complex_modifications": {
-                "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
-                    "mouse_motion_to_scroll.speed": 100
-                },
-                "rules": [
-                    {
-                        "description": "left_command + right_option = left_command + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(left_command + left_shift) + right_option = (left_command + left_shift) + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "left_option + right_option = left_option + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(left_option + left_shift) + right_option = (left_option + left_shift) + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "left_control + right_option = left_control + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(left_control + left_shift) + right_option = (left_control + left_shift) + left_arrow",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "left_command + right_shift = left_command + up",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "left_shift + right_shift = left_shift + up",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "left_control + right_shift = left_control + up",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(left_option + left_shift) + right_shift = (left_option + left_shift) + up",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(left_gui + left_shift) + right_shift = (left_gui + left_shift) + up",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_gui",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_gui",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "(left_control + left_shift) + right_shift = (left_control + left_shift) + up",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 834,
-                        "vendor_id": 1452
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 834,
-                        "vendor_id": 1452
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 782,
-                        "vendor_id": 1452
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 42,
-                        "vendor_id": 9610
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 42,
-                        "vendor_id": 9610
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_option"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_command"
-                                }
-                            ]
-                        }
-                    ],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 16386,
-                        "vendor_id": 1121
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 16386,
-                        "vendor_id": 1121
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_command"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_option"
-                                }
-                            ]
-                        }
-                    ],
-                    "treat_as_built_in_keyboard": false
-                }
-            ],
-            "fn_function_keys": [
-                {
-                    "from": {
-                        "key_code": "f1"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "display_brightness_decrement"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "display_brightness_increment"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f3"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_keyboard_key_code": "mission_control"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f4"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_keyboard_key_code": "spotlight"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f5"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "dictation"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f6"
-                    },
-                    "to": [
-                        {
-                            "key_code": "f6"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f7"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "rewind"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f8"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "play_or_pause"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f9"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "fast_forward"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f10"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "mute"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f11"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "volume_decrement"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f12"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "volume_increment"
-                        }
-                    ]
-                }
-            ],
-            "name": "Default profile",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
-            "selected": true,
-            "simple_modifications": [],
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "indicate_sticky_modifier_keys_state": true,
-                "mouse_key_xy_scale": 100
+  "profiles" : [ {
+    "complex_modifications" : {
+      "parameters" : {
+        "basic.simultaneous_threshold_milliseconds" : 50,
+        "basic.to_delayed_action_delay_milliseconds" : 500,
+        "basic.to_if_alone_timeout_milliseconds" : 1000,
+        "basic.to_if_held_down_threshold_milliseconds" : 500
+      },
+      "rules" : [ {
+        "description" : "Rotate between qwerty and dvorak",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "return_or_enter",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
             }
-        }
-    ]
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "dvorak",
+              "value" : 1
+            }
+          }, {
+            "set_variable" : {
+              "name" : "layer",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "/opt/homebrew/bin/terminal-notifier -message \"Enable dvorak\" -title Karabiner -group Karabiner ; sleep 1; /opt/homebrew/bin/terminal-notifier -remove Karabiner"
+          } ],
+          "conditions" : [ {
+            "name" : "layer",
+            "value" : 0,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "return_or_enter",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "dvorak",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "layer",
+              "value" : 0
+            }
+          }, {
+            "shell_command" : "/opt/homebrew/bin/terminal-notifier -message \"Disable dvorak\" -title Karabiner -group Karabiner ; sleep 1; /opt/homebrew/bin/terminal-notifier -remove Karabiner"
+          } ],
+          "conditions" : [ {
+            "name" : "layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "return_or_enter",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "right_shift" ]
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "dvorak",
+              "value" : 0
+            }
+          }, {
+            "set_variable" : {
+              "name" : "layer",
+              "value" : 0
+            }
+          }, {
+            "shell_command" : "/opt/homebrew/bin/terminal-notifier -message \"Clear layers\" -title Karabiner -group Karabiner ; sleep 1; /opt/homebrew/bin/terminal-notifier -remove Karabiner"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "k",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "set_notification_message" : {
+              "id" : "layers",
+              "text" : ""
+            }
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Swap caps lock to backspace",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "caps_lock",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "delete_or_backspace"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            }, {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "delete_or_backspace",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "caps_lock"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            }, {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Anne pro 2 support",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_control" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_shift",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_control", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_control" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f21",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_control" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f22",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_control" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f23",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f24"
+          },
+          "to" : [ {
+            "key_code" : "left_option",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 13,
+              "product_id" : 0
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Remap layout to Programmer Dvorak on Anne Pro 2",
+        "manipulators" : [ {
+          "to_if_held_down" : [ {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "4",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "5",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "7",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "2",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "7"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "open_bracket"
+          } ],
+          "from" : {
+            "key_code" : "2",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "3",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "5"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "3",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "4",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "3"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "4",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "1"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "9",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "6",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "9"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "key_code" : "6",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "equal_sign"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "0"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "8",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "2"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "0",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "4"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "equal_sign",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "0",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "6"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "close_bracket"
+          } ],
+          "from" : {
+            "key_code" : "0",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "8"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "1",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "3",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "q",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "quote"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "w",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "comma"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "e",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "period"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "r",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "p"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "y"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "y",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "f"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "u",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "g"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "c"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "o",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "r"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "l"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "open_bracket",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "slash"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "6",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "2",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "a",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "o"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "e"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "u"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "g",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "i"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "h",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "d"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "j",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "h"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "k",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "t"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "l",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "n"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "semicolon",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "s"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "quote",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "hyphen"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "z",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "semicolon"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "x",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "q"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "v",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "k"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "j"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "b",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "x"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "b"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "m",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "m"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "comma",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "w"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "period",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "v"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            }, {
+              "vendor_id" : 1241,
+              "product_id" : 41618
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Remap layout to Programmer Dvorak on MacBook Keyboard",
+        "manipulators" : [ {
+          "to_if_held_down" : [ {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "4",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "5",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "7",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "2",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "7"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "open_bracket"
+          } ],
+          "from" : {
+            "key_code" : "2",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "3",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "5"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "3",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "4",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "3"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "4",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "1"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "9",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "6",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "9"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "key_code" : "6",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "equal_sign"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "0"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "8",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "2"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "0",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "4"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "equal_sign",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "0",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "6"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "close_bracket"
+          } ],
+          "from" : {
+            "key_code" : "0",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "8"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "1",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "3",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "q",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "quote"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "w",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "comma"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "e",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "period"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "r",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "p"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "y"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "y",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "f"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "u",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "g"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "c"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "o",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "r"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "l"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "open_bracket",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "slash"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "6",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "2",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "a",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "o"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "e"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "u"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "g",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "i"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "h",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "d"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "j",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "h"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "k",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "t"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "l",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "n"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "semicolon",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "s"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "quote",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "hyphen"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "z",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "semicolon"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "x",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "q"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "v",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "k"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "j"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "b",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "x"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "b"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "m",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "m"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "comma",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "w"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "period",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "v"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 1452,
+              "product_id" : 834
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Remap layout to Programmer Dvorak on Dareu Keyboard",
+        "manipulators" : [ {
+          "to_if_held_down" : [ {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "4",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "5",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "7",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "2",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "7"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "open_bracket"
+          } ],
+          "from" : {
+            "key_code" : "2",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "3",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "5"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "3",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "4",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "3"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "from" : {
+            "key_code" : "4",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "1"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "9",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "6",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "9"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "key_code" : "6",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "equal_sign"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "0"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "8",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "2"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "0",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "4"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "equal_sign"
+          } ],
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "equal_sign",
+            "modifiers" : [ "left_shift" ]
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "0",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "6"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_held_down" : [ {
+            "key_code" : "close_bracket"
+          } ],
+          "from" : {
+            "key_code" : "0",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket"
+          }, {
+            "key_code" : "vk_none"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "8"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "1",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "3",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "grave_accent_and_tilde"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "q",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "quote"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "w",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "comma"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "e",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "period"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "r",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "p"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "y"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "y",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "f"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "u",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "g"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "c"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "o",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "r"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "l"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "open_bracket",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "slash"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "6",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "2",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "a",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "o"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "e"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "u"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "g",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "i"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "h",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "d"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "j",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "h"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "k",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "t"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "l",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "n"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "semicolon",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "s"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "quote",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "hyphen"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "z",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "semicolon"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "x",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "q"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "v",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "k"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "j"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "b",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "x"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "b"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "m",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "m"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "comma",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "w"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "period",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "v"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "z"
+          } ],
+          "conditions" : [ {
+            "name" : "dvorak",
+            "value" : 1,
+            "type" : "variable_if"
+          }, {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Remap dareu Keyboard",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "right_option"
+          },
+          "to" : [ {
+            "key_code" : "left_option",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 9610,
+              "product_id" : 42
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      } ]
+    },
+    "devices" : [ {
+      "identifiers" : {
+        "is_keyboard" : true,
+        "product_id" : 42,
+        "vendor_id" : 9610
+      },
+      "simple_modifications" : [ {
+        "from" : {
+          "key_code" : "left_command"
+        },
+        "to" : [ {
+          "key_code" : "left_option"
+        } ]
+      }, {
+        "from" : {
+          "key_code" : "left_option"
+        },
+        "to" : [ {
+          "key_code" : "left_command"
+        } ]
+      } ]
+    } ],
+    "name" : "Default",
+    "selected" : true
+  } ]
 }
