@@ -14,6 +14,8 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+local default_opts = { noremap = true }
+
 map("n", "<leader>gd", function()
   Util.float_term(
     { "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
@@ -27,5 +29,31 @@ map("n", "<leader>ps", ":NeovimProjectLoadHist<CR>", { desc = "Open the previous
 
 map("n", "<C-S-h>", ":vertical resize -10<CR>", { desc = "Resize window left" })
 map("n", "<C-S-l>", ":vertical resize +10<CR>", { desc = "Resize window right" })
-map("n", "<C-S-k>", ":resize -10<CR>", { desc = "Resize window up" })
-map("n", "<C-S-j>", ":resize +10<CR>", { desc = "Resize window down" })
+map("n", "<C-M-k>", ":resize -10<CR>", { desc = "Resize window up" })
+map("n", "<C-M-j>", ":resize +10<CR>", { desc = "Resize window down" })
+
+map("n", "<C-S-k>", ":m -2<CR>", { desc = "Move line up" })
+map("n", "<C-S-j>", ":m +1<CR>", { desc = "Move line down" })
+
+-- vim.api.nvim_set_keymap('n', '<Leader>ff', ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', {noremap = true, silent = true})
+map(
+  "n",
+  "<Leader>ff",
+  ':lua require"telescope.builtin".find_files({ hidden = true })<CR>',
+  { noremap = true, silent = true }
+)
+
+map("n", "<leader>fC", ':let @+ = expand("%")<CR>', { desc = "Copy relative path" })
+
+vim.keymap.set("n", "<leader>fh", function()
+  require("telescope.builtin").find_files({
+    hidden = true,
+    no_ignore = true, -- This ensures ignored files (from .gitignore) are also shown
+  })
+end, { desc = "Find Files (Hidden)" })
+
+-- remap `d` to `"_d`
+vim.keymap.set("n", "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set("v", "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set("n", "<D-s>", ":w<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<D-s>", "<ESC>:w<CR>", { noremap = true, silent = true })

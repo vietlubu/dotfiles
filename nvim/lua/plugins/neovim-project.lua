@@ -2,6 +2,7 @@ return {
   "coffebar/neovim-project",
   opts = {
     projects = { -- define project roots
+      "~/.config",
       "~/.config/*",
       "~/Projects/bear/*/source/*",
       "~/Projects/research/*",

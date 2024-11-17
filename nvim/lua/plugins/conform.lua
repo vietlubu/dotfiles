@@ -18,6 +18,8 @@ return {
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
+        vue = { "prettierd" },
+        html = { "prettierd" },
         -- rust = { "rustfmt" },
       },
       -- LazyVim will merge the options you set here with builtin formatters.
@@ -47,6 +49,11 @@ return {
           }, "pint"),
           args = { "$FILENAME" },
           stdin = false,
+        },
+        prettierd = {
+          options = {
+            singleAttributePerLine = true,
+          },
         },
       },
     }
