@@ -12,6 +12,7 @@ return {
           if vim.bo.filetype == "blade" and language_tree._lang ~= "javascript" and language_tree._lang ~= "php" then
             return "{{-- %s --}}"
           end
+          return nil
         end,
       },
     },
@@ -36,7 +37,7 @@ return {
         url = "https://github.com/EmranMR/tree-sitter-blade",
         files = {
           "src/parser.c",
-          -- 'src/scanner.cc',
+          "src/scanner.cc",
         },
         branch = "main",
         generate_requires_npm = true,

@@ -39,6 +39,7 @@
 		:anne-pro2 [{:vendor_id 1241 :product_id 41618}]
 		:anne-pro2-bt [{:vendor_id 13 :product_id 0}]
 		:dareu [{:vendor_id 9610 :product_id 42}]
+		:keyball61 [{:vendor_id 22871 :product_id 256}]
 	}
 	:templates
 	{
