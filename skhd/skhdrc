@@ -93,7 +93,7 @@ ctrl + alt + cmd - l: yabai -m space --focus next || yabai -m space --focus firs
 ctrl + alt + cmd - h: yabai -m space --focus prev || yabai -m space --focus last
 
 shift - backspace: yabai -m space --focus recent
-# shift - capslock: yabai -m space --focus recent
+ctrl + alt + cmd - backspace: yabai -m space --focus recent
 
 # stop/start/restart yabai
 ctrl + alt - q : yabai --stop-service
