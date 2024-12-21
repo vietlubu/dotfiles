@@ -44,6 +44,7 @@ map(
 )
 
 map("n", "<leader>fC", ':let @+ = expand("%")<CR>', { desc = "Copy relative path" })
+map("n", "<leader>fl", ':let @+ = expand("%") . ":" . line(".")<CR>', { desc = "Copy relative path with line number" })
 
 vim.keymap.set("n", "<leader>fh", function()
   require("telescope.builtin").find_files({
@@ -57,3 +58,7 @@ vim.keymap.set("n", "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set("v", "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set("n", "<D-s>", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<D-s>", "<ESC>:w<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-D-S>", ":noa w<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-D-S>", "<ESC>:noa w<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("x", '<leader>"', '<ESC>`<i"<ESC>`>la"<ESC>', { desc = "Add quotes around selection" })

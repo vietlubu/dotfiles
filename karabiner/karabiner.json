@@ -8,6 +8,167 @@
         "basic.to_if_held_down_threshold_milliseconds" : 500
       },
       "rules" : [ {
+        "description" : "Custom keyball61",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "1",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "2"
+          },
+          "to" : [ {
+            "key_code" : "equal_sign",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "3"
+          },
+          "to" : [ {
+            "key_code" : "open_bracket"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "4"
+          },
+          "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "5"
+          },
+          "to" : [ {
+            "key_code" : "9",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "6"
+          },
+          "to" : [ {
+            "key_code" : "0",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7"
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8"
+          },
+          "to" : [ {
+            "key_code" : "close_bracket"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "9"
+          },
+          "to" : [ {
+            "key_code" : "8",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "0"
+          },
+          "to" : [ {
+            "key_code" : "1",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ {
+              "vendor_id" : 22871,
+              "product_id" : 256
+            } ],
+            "type" : "device_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "Rotate between qwerty and dvorak",
         "manipulators" : [ {
           "from" : {

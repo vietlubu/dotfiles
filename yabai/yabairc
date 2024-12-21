@@ -33,8 +33,9 @@ yabai -m config mouse_action2 resize
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m mouse_drop_action swap
 
-apps_to_ignore="(System Settings|Calculator|Karabiner-Elements|licecap|Preview|Calendar)"
+apps_to_ignore="(System Settings|Calculator|Karabiner-Elements|licecap|Preview|Calendar|licecap)"
 yabai -m rule --add app="Godot$" manage=off
+yabai -m rule --add app="${apps_to_ignore}" manage=off
 # yabai -m rule --add app="^Calculator$" manage=off
 # yabai -m rule --add app="^Karabiner-Elements$" manage=off
 # yabai -m rule --add app="^licecap$" manage=off
