@@ -57,6 +57,16 @@
 			[:8 :close_bracket [:keyball61]]
 			[:9 :!S8 [:keyball61]]
 			[:0 :!S1 [:keyball61]]
+			[:!S1 :1 [:keyball61]]
+			[:!S2 :2 [:keyball61]]
+			[:!S3 :3 [:keyball61]]
+			[:!S4 :4 [:keyball61]]
+			[:!S5 :5 [:keyball61]]
+			[:!S6 :6 [:keyball61]]
+			[:!S7 :7 [:keyball61]]
+			[:!S8 :8 [:keyball61]]
+			[:!S9 :9 [:keyball61]]
+			[:!S0 :0 [:keyball61]]
 		]}
 		{:des "Rotate between qwerty and dvorak"
 	        :rules [
