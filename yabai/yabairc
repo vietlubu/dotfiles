@@ -56,4 +56,9 @@ borders active_color=0xff7ed6df inactive_color=0xff494d64 width=3.0 &
 
 # yabai -m config menubar_opacity 0.0
 
+apps_issue_with_yabai="(TablePlus)"
+yabai -m signal --add app="${apps_issue_with_yabai}" event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app="${apps_issue_with_yabai}" event=window_destroyed action='yabai -m space --layout bsp'
+
+
 sudo yabai --load-sa

@@ -37,7 +37,7 @@ return {
         url = "https://github.com/EmranMR/tree-sitter-blade",
         files = {
           "src/parser.c",
-          "src/scanner.cc",
+          -- "src/scanner.cc",
         },
         branch = "main",
         generate_requires_npm = true,

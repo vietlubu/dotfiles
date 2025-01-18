@@ -7,7 +7,7 @@ return {
         pyright = {
           settings = {
             python = {
-              pythonPath = "/opt/homebrew/bin/python3.11", -- Replace with the path to your Python interpreter
+              pythonPath = "/opt/homebrew/bin/python3.11",
               analysis = {
                 autoSearchPaths = true,
                 useLibraryCodeForTypes = true,

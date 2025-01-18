@@ -60,5 +60,6 @@ vim.keymap.set("n", "<D-s>", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<D-s>", "<ESC>:w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-D-S>", ":noa w<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-D-S>", "<ESC>:noa w<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<D-d>", '"_D', { noremap = true, silent = true })
 
 vim.keymap.set("x", '<leader>"', '<ESC>`<i"<ESC>`>la"<ESC>', { desc = "Add quotes around selection" })
