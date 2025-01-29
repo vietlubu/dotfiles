@@ -8,6 +8,7 @@ return {
       "~/Projects/research/*",
       "~/Projects/ragnarok/*",
       "~/Projects/ragnarok/tools/*",
+      "~/Projects/vietlubu/rust/ratatui/*",
     },
     last_session_on_startup = false,
   },

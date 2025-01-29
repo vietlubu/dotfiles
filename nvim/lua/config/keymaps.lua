@@ -13,7 +13,6 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
-
 local default_opts = { noremap = true }
 
 map("n", "<leader>gd", function()
